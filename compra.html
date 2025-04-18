@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Compra Simulada</title>
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 10%;
+    }
+    button {
+      background: #111;
+      color: #0f0;
+      border: 1px solid #0f0;
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>SIMULADOR DE COMPRA - LOJA404</h1>
+  <p>Produto selecionado: "Pacote Fantasma #001"</p>
+  <button onclick="falha()">FINALIZAR COMPRA</button>
+  <script>
+    function falha() {
+      alert('ERRO: FALHA NA TRANSAÇÃO. REDIRECIONANDO...');
+      window.location.href = 'erro.html';
+    }
+  </script>
+</body>
+</html>

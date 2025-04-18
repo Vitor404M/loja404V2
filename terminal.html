@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Terminal - Loja404</title>
+  <style>
+    body {
+      background-color: black;
+      color: lime;
+      font-family: monospace;
+      padding: 20px;
+    }
+    #terminal {
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+  <script>
+    const terminal = document.getElementById('terminal');
+    const linhas = [
+      '> Inicializando sistema...',
+      '> Verificando conexão com servidor...',
+      '> Acesso autorizado.',
+      '> redirecionando para área segura...',
+      '> Carregando Loja404...',
+      '> Nível 2: Acesso à compra simulada liberado.',
+      '',
+      '> Clique aqui para prosseguir: loja404.com/compra.html'
+    ];
+    let i = 0;
+    function digitar() {
+      if (i < linhas.length) {
+        terminal.innerHTML += linhas[i] + "\n";
+        i++;
+        setTimeout(digitar, 700);
+      }
+    }
+    digitar();
+  </script>
+</body>
+</html>
