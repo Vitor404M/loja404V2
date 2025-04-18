@@ -1,28 +1,33 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Erro no Sistema</title>
+  <title>Erro 404</title>
   <style>
     body {
       background-color: black;
       color: red;
-      font-family: monospace;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
-      padding-top: 15%;
-      animation: glitch 1s infinite;
+      padding: 20px;
     }
-    @keyframes glitch {
-      0% { text-shadow: 2px 2px red; }
-      50% { text-shadow: -2px -2px blue; }
-      100% { text-shadow: 2px 2px red; }
+    .mensagem {
+      animation: piscar 1s infinite;
+    }
+    @keyframes piscar {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <h1>FALHA CRÍTICA</h1>
-  <p>SISTEMA CORROMPIDO</p>
-  <p>Encerrando conexão...</p>
+  <div class="mensagem">
+    <h1>ERRO 404</h1>
+    <p>Acesso negado. Algo está errado com esta compra...</p>
+  </div>
 </body>
 </html>
