@@ -1,80 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Terminal - Loja404</title>
   <style>
     body {
-      background: black;
-      color: #0f0;
-      font-family: monospace;
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
       padding: 20px;
     }
-    #terminal {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .input-line {
-      display: flex;
-    }
-    input {
-      background: black;
-      color: #0f0;
-      border: none;
-      width: 100%;
-      font-family: monospace;
-      font-size: 16px;
-      outline: none;
+
+    .terminal {
+      border: 1px solid #00ff00;
+      padding: 20px;
+      background-color: #111;
     }
   </style>
 </head>
-<body>
-  <div id="terminal">
-    <p>root@loja404:~$ Bem-vindo. Digite <strong>help</strong> para comandos.</p>
-    <div id="output"></div>
-    <div class="input-line">
-      <span>></span>&nbsp;
-      <input type="text" id="cmd" autofocus>
-    </div>
+<body onload="mostrarAlerta()">
+  <div class="terminal">
+    <h2>LOJA404 // Terminal</h2>
+    <p>Aguardando comando...</p>
   </div>
 
   <script>
-    const input = document.getElementById('cmd');
-    const output = document.getElementById('output');
-
-    input.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        const cmdText = input.value.trim();
-        const line = document.createElement('p');
-        line.textContent = '> ' + cmdText;
-        output.appendChild(line);
-
-        let response = '';
-        switch (cmdText.toLowerCase()) {
-          case 'help':
-            response = 'Comandos disponíveis: help, acesso, loja, sair';
-            break;
-          case 'acesso':
-            response = 'Acesso negado. Permissão insuficiente.';
-            break;
-          case 'loja':
-            response = 'Redirecionando... (simulação falha)';
-            break;
-          case 'sair':
-            response = 'Encerrando conexão.';
-            break;
-          default:
-            response = 'Comando não reconhecido.';
-        }
-
-        const resLine = document.createElement('p');
-        resLine.textContent = response;
-        output.appendChild(resLine);
-
-        input.value = '';
-        window.scrollTo(0, document.body.scrollHeight);
-      }
-    });
+    function mostrarAlerta() {
+      setTimeout(() => {
+        alert("ALERTA DE SEGURANÇA: Uma tentativa de acesso não autorizado foi detectada.\n\nIniciando protocolo de contenção...");
+      }, 800); // Delay de 0.8s pra dar um suspense
+    }
   </script>
 </body>
 </html>
